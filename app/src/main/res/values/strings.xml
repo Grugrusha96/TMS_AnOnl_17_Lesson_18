@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lesson18</string>
+    <string name="nameUser">Введите Логин</string>
+    <string name="nameMail">Введитем email</string>
+    <string name="namePass">Введите пароль</string>
+    <string name="namePass1">Введите пароль повторно</string>
+    <string name="nameActivityReg">Регистрация</string>
+    <string name="nameActivitiLogin">Авторизация</string>
+    <string name="nameButtonLoagin">Войти</string>
+    <string name="nameButtonReg">Регистрация</string>
+
+</resources>
