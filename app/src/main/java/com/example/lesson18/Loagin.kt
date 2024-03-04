@@ -1,9 +1,11 @@
 package com.example.lesson18
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 class Loagin : AppCompatActivity() {
@@ -16,18 +18,24 @@ class Loagin : AppCompatActivity() {
         val userPass: EditText = findViewById(R.id.editTextPass)
         val userPass1: EditText = findViewById(R.id.editTextPass1)
         val button: Button = findViewById(R.id.buttonReg)
+        val reg: TextView = findViewById(R.id.textView3Loagin)
 
-        button.setOnClickListener {
+        reg.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+            button.setOnClickListener {
             val login = userLogin.text.toString().trim()
             val mail = userMail.text.toString().trim()
             val pass = userPass.text.toString().trim()
             val pass1 = userPass1.text.toString().trim()
 
 
-            if (pass == pass1)
-                Toast.makeText(this, "Поля не совпадают", Toast.LENGTH_LONG).show()
+            if (pass != pass1)
+                Toast.makeText(this, "Пaроли не совпадают", Toast.LENGTH_LONG).show()
             else {
-                (pass != pass1)
+                (pass == pass1)
 
                 if (login == "" || mail == "" || pass == "" || pass1 == "")
                     Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
