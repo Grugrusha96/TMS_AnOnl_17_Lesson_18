@@ -8,10 +8,16 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
-class Loagin : AppCompatActivity() {
+
+
+class LoaginMain : AppCompatActivity() {
+
+    private lateinit var binding: MainLoaginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_loagin)
+        binding = MainLoaginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
         val userLogin: EditText = findViewById(R.id.editTextLogin)
         val userMail: EditText = findViewById(R.id.editTextMail)
@@ -24,8 +30,12 @@ class Loagin : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
             button.setOnClickListener {
+
+                val intent = Intent (this, PageActivity::class.java)
+                startActivity(intent)
+
+
             val login = userLogin.text.toString().trim()
             val mail = userMail.text.toString().trim()
             val pass = userPass.text.toString().trim()
@@ -40,17 +50,13 @@ class Loagin : AppCompatActivity() {
                 if (login == "" || mail == "" || pass == "" || pass1 == "")
                     Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
                 else {
-                    val user = User(login, mail, pass, pass1)
+                    val intent = Intent(this, PageActivity::class.java)
+                    intent.putExtra("mail", binding.editTextMail.text.toString())
+                    intent.putExtra("login", binding.editTextLogin.text.toString())
+                    intent.putExtra("pass", binding.editTextPass.text.toString())
+                    intent.putExtra("pass1", binding.editTextPass1.text.toString())
 
-
-                    val db = DbHelper(this, null)
-                    db.addUser(user)
                     Toast.makeText(this, "Пользователь $login добавлен", Toast.LENGTH_LONG).show()
-
-                    userLogin.text.clear()
-                    userMail.text.clear()
-                    userPass.text.clear()
-                    userPass1.text.clear()
 
                 }
             }
