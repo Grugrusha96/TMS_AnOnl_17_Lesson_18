@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,76 +11,88 @@
     tools:layout_editor_absoluteX="-38dp"
     tools:layout_editor_absoluteY="-139dp">
 
-
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="@string/nameButtonLoagin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPass2" />
-
-    <EditText
-        android:id="@+id/editTextLogin1"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextMail1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:ems="10"
-        android:textColorHint="#BFB9B9"
-        android:textColor="#fdfdfd"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="92dp"
+        android:hint="@string/nameMail"
         android:inputType="text"
-        android:hint="@string/nameUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-
-
-    <EditText
-        android:id="@+id/editTextPass2"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:textColorHint="#BFB9B9"
-        android:inputType="textPassword"
-        android:hint="@string/namePass"
         android:textColor="#fdfdfd"
+        android:textColorHint="#BFB9B9"
+        app:helperText="@string/nameMail1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLogin1" />
-
-
-
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/TextViewStyle"
-        android:background="@drawable/cut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/inter_thin"
-        android:text="@string/nameActivitiLogin"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3Login"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextMail11"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:hint="@string/nameMail"
+        android:inputType="textEmailAddress"
+        android:lines="1"
+        android:textColor="#fdfdfd"
+        android:textColorHint="#BFB9B9"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMail1">
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editTextPass1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="@string/namePass"
+        android:inputType="textPassword"
+        android:textColor="#fdfdfd"
+        android:textColorHint="#BFB9B9"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:helperText="@string/namePass1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMail11"
+        app:passwordToggleEnabled="true" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextPass11"
+        android:layout_width="222dp"
+        android:layout_height="68dp"
+        android:hint="@string/namePass"
+        android:lines="1"
+        android:maxLength="16"
+        android:textColor="#fdfdfd"
+        android:textColorHint="#BFB9B9"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPass1">
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editButtonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="@string/nameActivityReg"
+        android:layout_marginTop="184dp"
+        android:text="@string/nameButtonLoagin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editTextPass11" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

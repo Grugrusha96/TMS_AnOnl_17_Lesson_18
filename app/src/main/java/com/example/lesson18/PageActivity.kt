@@ -2,6 +2,7 @@ package com.example.lesson18
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.lesson18.databinding.ActivityPageBinding
 
 class PageActivity : AppCompatActivity() {
 
@@ -12,14 +13,13 @@ class PageActivity : AppCompatActivity() {
         binding = ActivityPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val mail = intent.getStringExtra("mail")
+
         val pass = intent.getStringExtra("pass")
-        val pass1 = intent.getStringExtra("pass1")
-        val login = intent.getStringExtra("login")
+        val mail = intent.getStringExtra("mail")
 
         binding.result.text =
 
-        "Email: $mail\nPassword: $pass\nCheckBox1: $pass1\nCheckBox2: $login\nRadioButton"
+        "Mail: $mail\nmail: $pass\npass"
 
 
         binding.backButton.setOnClickListener {
